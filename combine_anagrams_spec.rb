@@ -67,4 +67,28 @@ describe "combine_anagrams for list of strings with two anagrams" do
   end
 end
 
+describe "combine_anagrams for list of strings with couple differnt anagrams" do
+  it "returns list of anagrams and other non-anagrams" do
+    result = combine_anagrams(["now", "won", "is", "the", "si", "time", "etim", "own", "a"])
+    result.should have(5).things
+    result.should include(["now", "won", "own"])
+    result.should include(["is","si"])
+    result.should include(["the"])
+    result.should include(["time","etim"])
+    result.should include(["a"])
+  end
+end
+
+describe "as stated" do
+  it "returns " do
+    result = combine_anagrams(['cars', 'for', 'potatoes', 'racs', 'four','scar', 'creams', 'scream'])
+    result.should have(5).things
+    result.should include(["cars", "racs", "scar"])
+    result.should include(["for"])
+    result.should include(["potatoes"])
+    result.should include(["creams","scream"])
+    result.should include(["four"])
+  end
+end
+
 
