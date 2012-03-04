@@ -5,7 +5,7 @@
 #
 def combine_anagrams(list)
   @@hash_to_anagrams = Hash.new { |h,k| h[k] = Array.new }
-  list.each { |word| hta = @@hash_to_anagrams[hash_for(word)]; if hta.nil? then hta = [word] else hta << word end }
+  list.each { |word| @@hash_to_anagrams[hash_for(word)] << word }
   @@hash_to_anagrams.keys.map { |key| @@hash_to_anagrams[key] }
 end
 
